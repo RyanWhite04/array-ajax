@@ -1,0 +1,18 @@
+{
+  "name": "array-ajax",
+  "homepage": "https://github.com/RyanWhite04/array-ajax",
+  "description": "",
+  "main": "array-ajax.html",
+  "moduleType": [],
+  "authors": [
+    "Ryan White"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

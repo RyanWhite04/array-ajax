@@ -1,0 +1,31 @@
+<dom-module id="my-array-ajax">
+  <template>
+    <template is="dom-repeat" items="{{array}}">
+      <!-- Here I pass the item in as the end of the "url" parameter passed to the iron-ajax, but this is only so I can show a working example using jsbin's ajax testing functionality, if you want to pass in the array items as actual params, just use the below commented iron-ajax element instead -->
+      <!-- <iron-ajax handle-as="json" url="{{url}}" params="{{item}}" index="{{index}}" on-response='responded' auto></iron-ajax> -->
+      <iron-ajax handle-as="json" url="{{url}}{{item}}" index="{{index}}" on-response='responded' auto></iron-ajax>
+    </template>  
+  </template>
+</dom-module>
+<script>
+Polymer({
+  is: "my-array-ajax",
+  properties: {
+    url: String,
+    array: Array,
+    lastResponse: {
+      type: Array,
+      computed: 'computeResponse(array)',
+      notify: true,
+    },
+  },
+  //- I only compute an initial response to set the length of 
+  //- the response array to be the same as the array length;
+  computeResponse: function(array) {
+    return array;
+  },
+  responded: function(e) {
+    this.set('lastResponse.' + e.currentTarget.index, e.detail.response);
+  },
+});
+</script>

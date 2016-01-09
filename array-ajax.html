@@ -1,4 +1,6 @@
-<dom-module id="my-array-ajax">
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="iron-ajax/iron-ajax.html">
+<dom-module id="array-ajax">
   <template>
     <template is="dom-repeat" items="{{array}}">
       <!-- Here I pass the item in as the end of the "url" parameter passed to the iron-ajax, but this is only so I can show a working example using jsbin's ajax testing functionality, if you want to pass in the array items as actual params, just use the below commented iron-ajax element instead -->
@@ -9,7 +11,7 @@
 </dom-module>
 <script>
 Polymer({
-  is: "my-array-ajax",
+  is: "array-ajax",
   properties: {
     url: String,
     array: Array,
